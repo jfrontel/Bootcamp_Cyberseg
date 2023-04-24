@@ -15,10 +15,15 @@ def ft_progress(it, size=21, j=0):
         show(i+1)
 
 time_load = 0  
-for i in ft_progress(range(300)):
-    inicio = time.time()   
-    time.sleep(0.1)
+listy = range(1000)
+ret = 0
+for i in ft_progress(listy):
+    inicio = time.time()
+    ret += (i + 3) % 5
+    time.sleep(0.01)
     fin = time.time()
-    time_total = (fin - inicio) * len(range(300))
+    time_total = (fin - inicio) * len(listy)
     time_load += (fin - inicio)
+
+print(f"\n{ret}")
 
