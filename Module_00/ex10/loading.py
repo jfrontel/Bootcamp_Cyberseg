@@ -1,53 +1,24 @@
-'''import sys
+import sys
+import time
 
-def progressbar(it, prefix="", size=60, file=sys.stdout):
+
+
+def ft_progress(it, size=21, j=0):
     count = len(it)
+
     def show(j):
-        x = int(size*j/count)
-        file.write("%s[%s%s] %i/%i\r" % (prefix, "#"*x, "."*(size-x), j, count))
-        file.flush()
-        file.write("\n")
-    show(0)
+        x = int(size*j/count) 
+        sys.stdout.write("ETA: %.2fs [%.2i%s][%s>%s] %i/%i | elapsed time %.2f\r" % (time_load, x/size*100, "%", "="*x, " "*(size-x-1), j, count, time_total))
+        sys.stdout.flush()
     for i, item in enumerate(it):
         yield item
         show(i+1)
-        file.write("\n")
-    file.flush()
-    
-import time
 
-for i in progressbar(range(15), "Computing: ", 40):
+time_load = 0  
+for i in ft_progress(range(300)):
+    inicio = time.time()   
     time.sleep(0.1)
-    
+    fin = time.time()
+    time_total = (fin - inicio) * len(range(300))
+    time_load += (fin - inicio)
 
-
-listy = range(1000)
-ret = 0
-for elem in ft_progress(listy):
-    ret += (elem + 3) % 5
-    sleep(0.01)
-    print()
-    print(ret)'''
-    
-import time
-inicio = time.time()
-# Código a medir
-time.sleep(1)
-# -------------
-
-fin = time.time()
-time_ejec = fin - inicio
-print(time_ejec) # 1.0005340576171875
-
-
-
-def inf_sequence():
-    num = '#'
-    x =0
-    while x < 3:
-        yield num
-        x += 1
-
-         
-for i in inf_sequence():
-    print(i, end="")
