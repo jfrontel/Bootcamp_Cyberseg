@@ -10,8 +10,8 @@ def ft_do_question():
     nb_lucky = input()
     if nb_lucky == 'exit':
         exit("Goodbye!")
-    if nb_lucky.isalpha() == True:
-        print("That's not a number.")
+    if (nb_lucky.isalpha() == True or nb_lucky.isdigit() == False or nb_lucky == "!#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~") and nb_lucky != '':
+        print("That's not a valid number.")
         return int(100)
     elif int(nb_lucky) <= 20 and int(nb_lucky) > 0:
         return (int(nb_lucky))  
@@ -22,7 +22,6 @@ def ft_do_question():
 i = 0
 while nb_random != nb_lucky:
     nb_lucky = ft_do_question()
-    
     if nb_lucky > nb_random and nb_lucky < 100:
         print('Too high!')
     elif nb_lucky < nb_random and nb_lucky >= 0:
@@ -37,3 +36,4 @@ else:
     else:
         print("Congratulations, you've got it!")
         print(f'You won in {i} attempts!')
+exit

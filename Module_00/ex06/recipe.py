@@ -45,19 +45,18 @@ def add_recipe():
     
     time_preparat = input("Enter a preparation time: ")
     cookbook[name]['prep_time'] = time_preparat  
-    print(cookbook)
 
 def ft_error():
-    print("Sorry, this option does not exist.")
-    print("List of available option:\n1: Add a recipe\n2: Delete a recipe")
-    print("3: Print a recipe\n4: Print the cookbook\n5: Quit\n\nPlease select an option:")
+    print('''\n[-] Sorry, this option does not exist.\n
+List of available option:\n\n1: Add a recipe\n2: Delete a recipe
+3: Print a recipe\n4: Print the cookbook\n5: Quit\n\nPlease select an option:''')
     nb_choose = input()
     choose_menu(int(nb_choose))
 
 
 def choose_menu(nb_choose):
     
-    if (nb_choose < 6 or nb_choose > 0):
+    if (nb_choose < 6 and nb_choose > 0):
         
         if nb_choose == 1:
             add_recipe()
@@ -90,8 +89,8 @@ def ft_main_menu(nb_choose):
     if nb_choose == 5:
         exit()
     else:       
-        print("Welcome to the Python Cookbook !\nList of available option:\n1: Add a recipe\n2: Delete a recipe")
-        print("3: Print a recipe\n4: Print the cookbook\n5: Quit")
+        print('''\nWelcome to the Python Cookbook !\nList of available option:\n\n1: Add a recipe\n2: Delete a recipe
+3: Print a recipe\n4: Print the cookbook\n5: Quit\n\nPlease select an option:''')
         nb_choose = input()
         choose_menu(int(nb_choose))
 

@@ -51,7 +51,7 @@ def caracter_plano_a_morse(caracter):
         return "error"
 
 
-def codificar_morse(texto_plano):
+def codificar_morse(texto_plano=''):
     # A mayúsculas para evitar hacer más comparaciones
     texto_plano = texto_plano.upper()
     morse = ""  # Aquí alojamos el resultado
