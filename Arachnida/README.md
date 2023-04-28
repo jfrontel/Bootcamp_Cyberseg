@@ -29,7 +29,7 @@ El formato en el que se muestren los metadatos queda a tu elección.</p>
 
 <h2>Analisis Spider</h2>
 
-</h4>Librería requests de Python</h4>
+<h4>Librería requests de Python</h4>
 
 <p> requests es una librería Python que facilita enormemente el trabajo con peticiones HTTP. Esta librería se encarga de obtener respuestas que se realizan en el protoloco HTTP de una plataforma web que se haya establecido con anterioridad con una API.</p>
 
@@ -38,7 +38,7 @@ El formato en el que se muestren los metadatos queda a tu elección.</p>
 <p>Instalar e importar la librería requests</p>
 <p>En un principio, para instalar la librería requests en Python deberás utilizar el paquete de instalación de Python pip install de la siguiente manera: python -m pip install requests.</p>
 
-</h4>Librería beautifulsoup de Python</h4>
+<h4>Librería beautifulsoup de Python</h4>
 
 <p>El paquete Beautiful Soup es ampliamente utilizado en técnicas de «scraping» permitiendo «parsear» principalmente código HTML.</p>
 
@@ -47,7 +47,7 @@ Para empezar a trabajar con Beautiful Soup es necesario construir un objeto de t
 
 <p>Buscaremos en el contenido ya parseado todos los enlaces de esa url buscado en la sopa con soup.find_all('a') formateamos cada uno de estos datos hasta conseguir las url limpias que iremos guardando en una lista</p>
 
-</h4>Librería argparse de Python</h4>
+<h4>Librería argparse de Python</h4>
 
 # Inicializa el parser de argumentos de la línea de comandos.
 <p>parser = argparse.ArgumentParser()</p>
@@ -57,7 +57,7 @@ Para empezar a trabajar con Beautiful Soup es necesario construir un objeto de t
 <p>parser.add_argument("--URL", dest = "url", type=str, help="Url de donde vamos a descargar las imagenes")
 <p>args = parser.parse_args()</p>
 
-<h2> Estructura Spider <h2>
+<h2> Estructura Spider </h2>
 <p>  - Procesar los argumentos de entrada:</p>
 <p>     ---- Existe Recursividad: </p>
 <p>     ---------- Existe l entonces l=argumento</p>
