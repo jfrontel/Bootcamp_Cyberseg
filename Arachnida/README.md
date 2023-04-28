@@ -9,7 +9,7 @@ considerado cheat y supondrá suspender el proyecto</p>
 <p>El programa spider permitirá extraer todas las imágenes de un sitio web, de manera
 recursiva, proporcionando una url como parámetro. Gestionarás las siguientes opciones
 del programa:</p>
-<p>./spider [-rlpS] URL</p>
+<p>./spider [-rlp] URL</p>
 <p>• Opción -r : descarga de forma recursiva las imágenes en una URL recibida como
 parámetro.</p>
 <p>• Opción -r -l [N] : indica el nivel profundidad máximo de la descarga recursiva.
@@ -18,7 +18,7 @@ En caso de no indicarse, será 5.</p>
 En caso de no indicarse, se utilizará ./data/.</p>
 <p>El programa descargará por defecto las siguientes extensiones: .jpg/jpeg, .png, .gif, .bmp</p>
 
-<h3>Spider</h3>
+<h3>Scorpion</h3>
 <p>El segundo programa scorpion recibirá archivos de imagen como parámetros y será
 capaz de analizarlos en busca datos EXIF y otros metadatos, mostrándolos en pantalla.
 El programa será compatible, al menos, con las mismas extensiones que gestiona spider.
