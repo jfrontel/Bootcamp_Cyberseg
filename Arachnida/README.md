@@ -49,7 +49,7 @@ Para empezar a trabajar con Beautiful Soup es necesario construir un objeto de t
 
 <h4>Librería argparse de Python</h4>
 
-# Inicializa el parser de argumentos de la línea de comandos.
+<p> Inicializa el parser de argumentos de la línea de comandos.</p>
 <p>parser = argparse.ArgumentParser()</p>
 <p>parser.add_argument("-r", dest = 'recursividad', help="Descarga de forma recursiva las imágenes en una URL.", action="store_true")</p>
 <p>parser.add_argument("-l", dest = "level_depth", type=int, help="Indica el nivel profundidad máximo de la descarga recursiva. Por defecto 5", default = 5)</p>
