@@ -29,7 +29,7 @@ El formato en el que se muestren los metadatos queda a tu elección.</p>
 
 <h2>Analisis Spider</h2>
 
-<h4>Librería requests de Python</h4>
+<h4>Modulo requests de Python</h4>
 
 <p> requests es una librería Python que facilita enormemente el trabajo con peticiones HTTP. Esta librería se encarga de obtener respuestas que se realizan en el protoloco HTTP de una plataforma web que se haya establecido con anterioridad con una API.</p>
 
@@ -38,7 +38,7 @@ El formato en el que se muestren los metadatos queda a tu elección.</p>
 <p>Instalar e importar la librería requests</p>
 <p>En un principio, para instalar la librería requests en Python deberás utilizar el paquete de instalación de Python pip install de la siguiente manera: python -m pip install requests.</p>
 
-<h4>Librería beautifulsoup de Python</h4>
+<h4>Modulo beautifulsoup de Python</h4>
 
 <p>El paquete Beautiful Soup es ampliamente utilizado en técnicas de «scraping» permitiendo «parsear» principalmente código HTML.</p>
 
@@ -47,7 +47,7 @@ Para empezar a trabajar con Beautiful Soup es necesario construir un objeto de t
 
 <p>Buscaremos en el contenido ya parseado todos los enlaces de esa url buscado en la sopa con soup.find_all('a') formateamos cada uno de estos datos hasta conseguir las url limpias que iremos guardando en una lista</p>
 
-<h4>Librería argparse de Python</h4>
+<h4>Modulo argparse de Python</h4>
 
 <p> Inicializa el parser de argumentos de la línea de comandos.</p>
 <p>parser = argparse.ArgumentParser()</p>
@@ -57,7 +57,7 @@ Para empezar a trabajar con Beautiful Soup es necesario construir un objeto de t
 <p>parser.add_argument("--URL", dest = "url", type=str, help="Url de donde vamos a descargar las imagenes")
 <p>args = parser.parse_args()</p>
 
-<h2> Estructura Spider </h2>
+<h3> Estructura Spider </h3>
 <p>  - Procesar los argumentos de entrada:</p>
 <p>     ---- Existe Recursividad: </p>
 <p>     ---------- Existe l entonces l=argumento</p>
@@ -66,3 +66,60 @@ Para empezar a trabajar con Beautiful Soup es necesario construir un objeto de t
 <p>     ----------- Descargar fotos de url = argumento</p>
   
 
+<h2>Analisis Scorpion</h2>
+
+<h4>Modulo Pillow de Python</h4>
+
+<p>En este programa, trabajaremos con el módulo de imagen de PIL en Python. Primero, veamos cómo instalar el PIL.</p>
+<p>pip install Pillow</p>
+<p>Trabajar con el módulo de imagen</p>
+<p>Aquí, veremos algunos métodos y propiedades proporcionados por el módulo de imagen que son los siguientes:</p>
+
+<p>--> Abrir imagen   ------    file_1 = Image.open(n)</p>
+<p>Guardar imagen   ------    file_1.save()</p>
+<p>Tamaño de la imagen</p>
+<p>rotar imagen</p>
+<p>Delimitar imagen...</p>
+
+<p> https://barcelonageeks.com/python-pillow-uso-del-modulo-de-imagen </p>
+
+<p>from PIL import Image </p>
+<p>from PIL.ExifTags import TAGS </p>
+<p>El módulo de imagen de Pillow se utiliza para leer/abrir la foto.
+<p>Las ETIQUETAS del módulo ExifTags de Pillow también deben importarse para comprender y decodificar los datos EXIF.
+
+
+<h4>getexif() de Python</h4>
+
+<p>EXIF: visualizar y guardar los metadatos de las imágenes</p>
+<p>El bloque EXIF contiene todos los detalles de las especificaciones técnicas y los parámetros de captura de las imágenes almacenadas. </p>
+<p>En el bloque EXIF se almacenan los siguientes datos de imagen:</p>
+
+<p>|  [+] Resolución</p>
+<p>|  [+] Tipo de archivo</p>
+<p>|  [+] Velocidad del obturador/tiempo de exposición/ISO</p>
+<p>|  [+] Rotación de imagen</p>
+<p>|  [+] Fecha/hora</p>
+<p>|  [+] Balance de blanco</p>
+<p>|  [+] Miniatura</p>
+<p>|  [+] Distancia focal</p>
+<p>|  [+] Flash</p>
+<p>|  [+] Objetivo</p>
+<p>|  [+] Tipo de archivo</p>
+<p>|  [+] Tipo de cámara</p>
+<p>|  [+] Software utilizado</p>
+<p>|  [+] Tiempo de grabación y, si es necesario, etiquetado GPS</p>
+
+<p>Los detalles de todos los elementos de metadatos que se pueden extraer se pueden obtener simplemente imprimiendo las TAGS. TAGS tiene la forma de un diccionario con el elemento de metadatos como valor y clave única para cada elemento </p>
+<p>print(TAGS)</p>
+
+<h3> Estructura Scorpion </h3>
+<p>  - Procesar los argumentos de entrada:</p>
+<p>     ---- Añadir los directorios a analizar </p>
+<p>     ---- Extraer metadatos de cada imagen </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
