@@ -25,3 +25,8 @@ trará en la salida estándar.</p>
 <p>[+]  El sitio web solicita al usuario que proporcione una contraseña de un solo uso generada por la aplicación de autenticación.</p>
 <p>[+]  Luego, el sitio web genera otro token utilizando un valor inicial que tanto la aplicación de autenticación como él mismo conocen.</p>
 <p>[+]  El sitio web procede a autenticar al usuario si el token recién generado coincide con el token proporcionado por el usuario.</p>
+
+<h3>¿Qué es HMAC (Código de autenticación de mensajes basado en hash)?</h3>
+
+<p>Los HMAC proporcionan al cliente y al servidor una clave privada compartida que solo ellos conocen. El cliente realiza un hash único (HMAC) para cada solicitud. Cuando el cliente solicita el servidor, procesa los datos solicitados con una clave privada y los envía como parte de la solicitud. Tanto el mensaje como la clave se codifican en pasos separados para que sea seguro. Cuando el servidor recibe la solicitud, crea su propio HMAC. Se comparan ambos HMACS y, si ambos son iguales, el cliente se considera legítimo<p/>
+
