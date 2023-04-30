@@ -30,3 +30,19 @@ trará en la salida estándar.</p>
 
 <p>Los HMAC proporcionan al cliente y al servidor una clave privada compartida que solo ellos conocen. El cliente realiza un hash único (HMAC) para cada solicitud. Cuando el cliente solicita el servidor, procesa los datos solicitados con una clave privada y los envía como parte de la solicitud. Tanto el mensaje como la clave se codifican en pasos separados para que sea seguro. Cuando el servidor recibe la solicitud, crea su propio HMAC. Se comparan ambos HMACS y, si ambos son iguales, el cliente se considera legítimo<p/>
 
+
+<h3>Cómo funciona la autenticación de dos factores</h3>
+<p>Esencialmente, el proceso de autenticación de dos factores implica el siguiente procedimiento:<p/>
+
+<p>[+]__ El usuario se autentica mediante correo electrónico y contraseña (factor de conocimiento).<p/>
+<p>[+]__ La plataforma confirma la información del usuario y solicita una segunda técnica de autenticación.<p/>
+<p>[+]__ La plataforma genera una contraseña de un solo uso (OTP) y la envía a un dispositivo al que solo el usuario puede acceder (factor de posesión).<p/>
+<p>[+]__ El usuario proporciona la OTP recibida a la plataforma, que valida la información y autoriza al usuario.<p/>
+
+<h3>Cómo funcionan las aplicaciones de autenticación TOTP</h3>
+<p>Esencialmente, el proceso de autenticación con autenticadores implica el siguiente procedimiento:<p/>
+
+<p>1._El sitio web solicita al usuario que proporcione una contraseña de un solo uso generada por la aplicación de autenticación.<p/>
+<p>2._Luego, el sitio web genera otro token utilizando un valor inicial que tanto la aplicación de autenticación como él mismo conocen.<p/>
+<p>3._El sitio web procede a autenticar al usuario si el token recién generado coincide con el token proporcionado por el usuario.<p/>
+
