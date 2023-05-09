@@ -110,4 +110,6 @@ Diagrama de flujo del programa
 
 Recibir por parametro de entrada la credencial de usuarii en base 64
           |
+          
+          https://openaccess.uoc.edu/bitstream/10609/99946/6/javgueramTFM0619memoria.pdf
  
