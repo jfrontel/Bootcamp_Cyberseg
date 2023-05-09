@@ -1,3 +1,17 @@
+<h2>Introduccion: Necesidad ft_opt</h2>
+<p>Las 10 peores contraseñas más utilizadas en 2018</p>
+<p>1 123456 </p>
+<p>2 password </p>
+<p>3 123456789 </p>
+<p>4 12345678 </p>
+<p>5 12345 </p>
+<p>6 111111 </p>
+<p>7 1234567</p>
+<p>8 sunshine</p>
+<p>9 qwerty </p>
+<p>10 iloveyou</p>
+
+
 <h2> ft_opt: Enunciado </h2>
 <p>En el lenguaje de tu elección, debes implementar un programa que permita registrar
 una clave inicial, y sea capaz de generar una nueva contraseña cada vez que se solicite.
@@ -15,6 +29,17 @@ archivo llamado ft_otp.key, que estará cifrado en todo momento.</p>
 trará en la salida estándar.</p>
 
 <h2> Analisis ft_opt</h2>
+
+<h3>Códigos OTP</h3>
+<p>Este concepto viene del anglicismo “One-Time Password”, lo que viene a significar una contraseña válida para una autenticación, sesión de inicio
+o transacción. Esta una contraseña que se genera dinámicamente y que como su nombre indica sólo puede ser utilizada una vez, a veces durante
+un periodo corto de tiempo (minutos o incluso hasta segundos) desde que haya sido generado.</p>
+
+<p>La adopción de las contraseñas de un sólo uso puede ofrecer una alternativa más segura o incluso complementar a una contraseña
+estática en un proceso de autenticación multifactor. Su potencial implica que si un atacante llegase a obtener esta contraseña dinámica, no sería
+capaz de volverla a utilizar de forma válida en un segundo intento, quedando así el usuario protegido si sus credenciales estáticas hubieran
+sido comprometidas por algún mecanismo o ataque.</p>
+
 
 <h3>Contraseña de un solo uso basada en el tiempo (TOTP)</h3>
 <p>La contraseña de un solo uso basada en el tiempo (TOTP) es una forma común de implementar la autenticación de dos factores en las aplicaciones. Funciona solicitando al usuario un token que generalmente se envía en un SMS, correo electrónico o un pase secreto generado al dispositivo del usuario con un tiempo de vencimiento. Compara el token provisto con el token generado real, luego los autentica si los tokens coinciden.</p>
@@ -38,11 +63,4 @@ trará en la salida estándar.</p>
 <p>[+]__ La plataforma confirma la información del usuario y solicita una segunda técnica de autenticación.<p/>
 <p>[+]__ La plataforma genera una contraseña de un solo uso (OTP) y la envía a un dispositivo al que solo el usuario puede acceder (factor de posesión).<p/>
 <p>[+]__ El usuario proporciona la OTP recibida a la plataforma, que valida la información y autoriza al usuario.<p/>
-
-<h3>Cómo funcionan las aplicaciones de autenticación TOTP</h3>
-<p>Esencialmente, el proceso de autenticación con autenticadores implica el siguiente procedimiento:<p/>
-
-<p>1._El sitio web solicita al usuario que proporcione una contraseña de un solo uso generada por la aplicación de autenticación.<p/>
-<p>2._Luego, el sitio web genera otro token utilizando un valor inicial que tanto la aplicación de autenticación como él mismo conocen.<p/>
-<p>3._El sitio web procede a autenticar al usuario si el token recién generado coincide con el token proporcionado por el usuario.<p/>
 
