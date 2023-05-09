@@ -64,3 +64,50 @@ sido comprometidas por algún mecanismo o ataque.</p>
 <p>[+]__ La plataforma genera una contraseña de un solo uso (OTP) y la envía a un dispositivo al que solo el usuario puede acceder (factor de posesión).<p/>
 <p>[+]__ El usuario proporciona la OTP recibida a la plataforma, que valida la información y autoriza al usuario.<p/>
 
+La clasificación más importante de OTPS [32] puede ser:
+• HOPT (HMAC-based One-Time Password), contraseña de un solo
+uso basada en eventos: está basada en el algoritmo criptográfico
+HMAC y depende de dos tipos de información. El primero es la
+clave secreta llamada “inicialización” la cual solo conoce el token y
+el servidor que valida los códigos OTP enviados. el segundo es el
+factor móvil, que es un contador almacenado en el token y el
+servidor. El contador del token incrementa al pulsar el botón del
+token, mientras que el contador del servicio solo se incrementa
+cuando se valida correctamente una OTP.
+• TOPT (Time-based One-Time Password), contraseña de un solo
+uso basada en tiempo: Está inspirada en la anterior, HOTP, pero
+su factor móvil es el tiempo en lugar de un contador. TOPT
+emplea tiempo en incrementos llamado “timestep”, que suele ser
+de 30 o 60 segundos. De esta forma, cada OTP será válida
+mientras dura el “timestep”.
+
+
+
+El algoritmo HTOP
+El algoritmo está basado en un valor de un contador incremental y una
+clave simétrica estática únicamente conocida por el token (el cual posee
+el usuario) y el servicio de validación.
+Para generar el valor se usará el algoritmo HMAC-SHA-1, definido por la
+IETF en el RFC-2104. Normalmente ha sido considerada una función
+segura, pero ya en 2004 se dio a conocer un número significante de
+ataques mediante colisiones contra funciones similares y en 2017
+Google anunció [5] que había sido capaz de crear dos ficheros PDF
+distintos con el mismo resumen SHA-1, lo cual podría considerarse una
+vulnerabilidad muy grande.
+Como la salida de la función HMAC-SHA-1 genera un resumen de 160
+bits (20 bytes) se debe realizar una operación de truncado a “algo” que
+sea fácilmente después retornado por el usuario, ya que un código de
+muchos dígitos dificultaría el acto de autenticación y empeoraría la
+experiencia final del usuario. Es importante que los valores generados
+por el algoritmo HOTP sean tratados como big-endian [36], es decir,
+representar los bytes en el orden natural (desde la izquierda) y evitar así
+problemas de interpretación
+
+
+
+
+Diagrama de flujo del programa
+
+Recibir por parametro de entrada la credencial de usuarii en base 64
+          |
+ 
