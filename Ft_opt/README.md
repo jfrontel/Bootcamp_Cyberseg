@@ -1,15 +1,15 @@
 <h2>Introduccion: Necesidad ft_opt</h2>
 <p>Las 10 peores contraseñas más utilizadas en 2018</p>
-<p>1 123456 </p>
-<p>2 password </p>
-<p>3 123456789 </p>
-<p>4 12345678 </p>
-<p>5 12345 </p>
-<p>6 111111 </p>
-<p>7 1234567</p>
-<p>8 sunshine</p>
-<p>9 qwerty </p>
-<p>10 iloveyou</p>
+<p>1 - 123456 </p>
+<p>2 - password </p>
+<p>3 - 123456789 </p>
+<p>4 - 12345678 </p>
+<p>5 - 12345 </p>
+<p>6 - 111111 </p>
+<p>7 - 1234567</p>
+<p>8 - sunshine</p>
+<p>9 - qwerty </p>
+<p>10 - iloveyou</p>
 
 
 <h2> ft_opt: Enunciado </h2>
