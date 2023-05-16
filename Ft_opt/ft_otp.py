@@ -1,9 +1,19 @@
+print('''
+--------------------------------------------------------------------------------------------------------------
+==============================================================================================================                           
+                                            		FT_OTP              	                   by jfrontel
+==============================================================================================================
+--------------------------------------------------------------------------------------------------------------
+''')
 
 import hmac, base64, struct, hashlib, time
 from cryptography.fernet import Fernet
 import sys
-import os
+import os, re
 import argparse
+
+# __________________________________________  MENÚ DE ARGUMENTOS  _____________________________________________ #
+# ft_get_argument() tomará los argumentos de entrada del programa ft_otp
 
 def process_arguments():
     parser = argparse.ArgumentParser(description='Generate TOTP key')
@@ -11,6 +21,60 @@ def process_arguments():
     parser.add_argument('-k', '--tempkey', type=str)
     args = parser.parse_args()
     return args
+
+# ____________________________________________  VALIDAR ARCHIVOS _______________________________________________ #
+# ft_file_ok() toma por argumento el fichero dado al programa, comprueba que existe y es legible con permiso de lectura. 
+# Lectura del fichero y verificación de que la clave es hexadecimal y que contiene al menos 64 caracteres  
+
+def ft_file_ok(file):
+	global secret_key
+	if not (os.path.isfile(file) or os.access(file, os.R_OK)):
+		print("ERROR: el fichero dado no existe o no tiene permiso de lectura.")
+		exit()
+	with open(file, "r") as f:
+		secret_key = f.read()
+		
+	if re.match(r'{64,}', secret_key):
+		print("La clave tiene formato correcto...")		
+
+		return 1
+	else:
+		print("La clave no está en formato hexadecimal o no tiene el mínimo de 64 caracteres.")
+		return 0
+
+
+'''    if not re.match(r'^[0-9a-fA-F]{64,}$', key):
+        print("La clave no está en formato hexadecimal o no tiene el mínimo de 64 caracteres.")'''
+        
+'''		        f = open(args.savekey, 'r')
+        hexkey = f.read().strip()
+        hexcad = 'abcdef123456789ABCDEF'
+        if len(hexkey) >= 64 and all(c in hexcad for c in hexkey):
+            with open('ft_otp.key', 'w') as f:
+                f.write(hexkey)
+        else:
+            print("Key has to be at least 64 hexadecimal characters")'''
+            
+'''    try:
+        if len(key) >= 64:
+            int(key, 16)
+            return True
+        else:
+            return False
+    except Exception:
+        return False'''
+        
+'''def is_hex(key_hex):
+	"""Function to verify if string is hex of 64 characters"""
+	if len(key_hex) >= 64:
+		try:
+			int(key_hex, 16)
+		except ValueError:
+			return False
+		return True
+	else:
+		return False'''
+            
 
 def get_hotp_token(secret, intervals):
     '''Con la ayuda del base64.b16decode() método, podemos decodificar la cadena binaria usando alfabetos base16 en forma normal.
@@ -46,36 +110,14 @@ def get_totp_token(secret):
         pass_temp +='0'
     return pass_temp
 
-def ft_file_ok(file):
-	global secret_key
-	# El fichero existe y es legible con permiso de lectura
-	if not (os.path.isfile(file) or os.access(file, os.R_OK)):
-		print("ERROR: el fichero dado no existe o no tiene permiso de lectura.")
-		exit()
-	# Leer clave y guardar 
-	with open(file, "r") as f:
-		try:
-			secret_key = f.read()
-			# Verificación de que la clave es hexadecimal y que contiene al menos 64 caracteres
 
-			hexkey = f.read().strip()
-			hexcad = 'abcdef123456789ABCDEF'
-			if len(hexkey) >= 64 and all(c in hexcad for c in hexkey):
-				with open('ft_otp.key', 'w') as f:
-					f.write(hexkey)
-			else:
-				print("Key has to be at least 64 hexadecimal characters")
-		except:
-			print("could not open file")
-			return 0
-	return 1
 
 def store_key(file1):
 	try:
 		with open(file1, 'rb') as file:
 			original_hex = file.read()
 	except:
-		print(f"El fichero {file} no ha podido abrirse")
+		print(f"El fichero no ha podido abrirse")
 	if ft_file_ok(file1) == 1:
 		try:
 			hex_key = (original_hex, 16)
